@@ -3,7 +3,8 @@ package com.binarysearchtree;
 /*@Description- Start the binary search tree problem with welcome message.
 * Create a binary search tree.
 * First add 56 as root node.
-* Then add 30 left node and 70 right node in a binary search tree.*/
+* Then add 30 left node and 70 right node in a binary search tree.
+* Add all node using the size method in binary tree.*/
 public class BinarySearchTree<K extends Comparable<K>> {
 
     private binaryNode<K> root;
@@ -17,7 +18,8 @@ public class BinarySearchTree<K extends Comparable<K>> {
     }
 
     /*Create a binary search tree.
-    * Add 56 as root node and 30 will add left node and 70 add right node.*/
+    * Add 56 as root node and 30 will add left node and 70 add right node.
+    * Add all node using size in binary method.*/
     private binaryNode<K> addRecursively(binaryNode<K> current, K key) {
             if (current == null);
                 return new binaryNode<>(key);

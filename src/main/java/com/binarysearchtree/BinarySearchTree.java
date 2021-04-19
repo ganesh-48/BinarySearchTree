@@ -4,7 +4,8 @@ package com.binarysearchtree;
 * Create a binary search tree.
 * First add 56 as root node.
 * Then add 30 left node and 70 right node in a binary search tree.
-* Add all node using the size method in binary tree.*/
+* Add all node using the size method in binary tree.
+* Search a node in BST recursively.*/
 public class BinarySearchTree<K extends Comparable<K>> {
 
     private binaryNode<K> root;
@@ -40,5 +41,17 @@ public class BinarySearchTree<K extends Comparable<K>> {
     private int getSizeRecursive(binaryNode<K> current) {
         return current == null ? 0 : 1 + this.getSizeRecursive(current.left) +
                             this.getSizeRecursive(current.right);
+    }
+
+    /*search node in binary search tree search 63 in BST*/
+    private Boolean search(binaryNode<K> current, K key) {
+        if (current == null) return false;
+        int compareResult = key.compareTo(current.key);
+        if (compareResult == 0) return true;
+        if (compareResult < 0) {
+            return search(current.left, key);
+        } else {
+            return search(current.right, key);
+        }
     }
 }
